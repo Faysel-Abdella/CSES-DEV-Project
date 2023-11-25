@@ -31,7 +31,7 @@ const Home = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-                className="max-lg:py-[13px] max-lg:px-[38px] py-[15px] px-[20px] rounded-[50px] bg-[#00c0ff] text-white text-lg font-semibold"
+                className=" max-lg:py-[13px] max-lg:px-[38px] py-[15px] px-[20px] rounded-[50px] bg-[#00c0ff] text-white text-lg font-semibold"
               >
                 Register
               </Link>

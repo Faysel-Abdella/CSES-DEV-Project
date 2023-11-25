@@ -1,4 +1,5 @@
 import About from "./components/About";
+import Contact from "./components/Contact";
 import Features from "./components/Features";
 import Home from "./components/Home";
 import LandingEvents from "./components/LandingEvents";
@@ -14,6 +15,7 @@ function App() {
       <LandingEvents />
       <Features />
       <Testimonial />
+      <Contact />
     </>
   );
 }

@@ -43,6 +43,12 @@ const LandingEvents = () => {
                 A total of more than 10 skill sharing events have been prepared,
                 and our members have gained valuable skills through this event.
               </p>
+
+              <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
+                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                  Login for more
+                </a>
+              </p>
             </div>
           </li>
           <li className="m-0 mb-[25px] pl-[25px] max-md:pl-0 w-[33.3333%] max-lg:w-1/2 max-md:w-full">
@@ -71,6 +77,12 @@ const LandingEvents = () => {
                 hackathons are rewarded generously, motivating them to continue
                 their journey with increased happiness and enthusiasm.
               </p>
+
+              <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
+                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                  Login for more
+                </a>
+              </p>
             </div>
           </li>
           <li className="m-0 mb-[25px] pl-[25px] max-md:pl-0 w-[33.3333%] max-lg:w-1/2 max-md:w-full">
@@ -97,6 +109,12 @@ const LandingEvents = () => {
                 experts in their field through these tutorials. Led by
                 successful developers, these sessions equally emphasize the
                 development of technical and soft skills.
+              </p>
+
+              <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
+                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                  Login for more
+                </a>
               </p>
             </div>
           </li>
