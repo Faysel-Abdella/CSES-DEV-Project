@@ -4,11 +4,6 @@ import home from "../assets/backgrounds/home.svg";
 
 import bgjar1 from "../assets/backgrounds/bgjar1.svg";
 
-// import linkedin from "../assets/contactSVGs/linkedin-in.svg";
-// import twitter from "../assets/contactSVGs/twitter.svg";
-// import telegram from "../assets/contactSVGs/telegram.svg";
-// import github from "../assets/contactSVGs/github.svg";
-
 const Home = () => {
   return (
     <section

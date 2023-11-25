@@ -72,18 +72,7 @@ const NavBar = () => {
                 Events
               </Link>
             </li>
-            <li className="">
-              <Link
-                to="portfolio"
-                smooth={true}
-                duration={500}
-                spy={true}
-                className="font-poppins text-white cursor-pointer"
-                onClick={() => setNavBar(!navbar)}
-              >
-                Portfolio
-              </Link>
-            </li>
+
             <li className="">
               <Link
                 to="testimonial"
