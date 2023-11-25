@@ -11,6 +11,7 @@ import Testimonial from "./components/Testimonial";
 // Pages
 import ErrorPage from "./pages/404";
 import LogIn from "./pages/LoginPage";
+import DashboardLayout from "./components/Layout/DashboardLayout";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LogIn />,
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "",
+      },
+    ],
   },
 ]);
 
