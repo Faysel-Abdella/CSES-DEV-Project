@@ -62,7 +62,7 @@ const NavBar = () => {
             </li>
             <li className="">
               <Link
-                to="services"
+                to="events"
                 smooth={true}
                 duration={500}
                 spy={true}
@@ -75,7 +75,7 @@ const NavBar = () => {
 
             <li className="">
               <Link
-                to="services"
+                to="whydev"
                 smooth={true}
                 duration={500}
                 spy={true}
@@ -108,7 +108,7 @@ const NavBar = () => {
               smooth={true}
               duration={500}
               spy={true}
-              className="font-poppins text-white cursor-pointer"
+              className="font-poppins text-white cursor-pointer w-full"
               onClick={() => setNavBar(!navbar)}
             >
               Contact Us

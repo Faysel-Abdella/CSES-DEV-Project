@@ -6,7 +6,7 @@ const LandingEvents = () => {
   return (
     <section
       className="max-container px-10 max-md:px-3 pt-20 font-poppins bg-bgjar2"
-      id="services"
+      id="events"
     >
       <div className="w-full max-w-[650px] mx-auto text-center">
         <p className="text-[21px] max-md:text-[17px] text-[#00c0ff] mb-[5px] font-medium">

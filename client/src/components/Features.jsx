@@ -6,7 +6,10 @@ import creativity from "../assets/Feature/creativity.svg";
 
 const Features = () => {
   return (
-    <section className="max-container px-10 max-md:px-3 pt-20 pb-3 font-poppins bg-blue-950">
+    <section
+      className="max-container px-10 max-md:px-3 pt-20 pb-3 font-poppins bg-blue-950"
+      id="whydev"
+    >
       <div className="w-full max-w-[650px] mx-auto text-center">
         <p className="text-[21px] max-md:text-[17px] text-[#00c0ff] mb-[5px] font-medium">
           Features
