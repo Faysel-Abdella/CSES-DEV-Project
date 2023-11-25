@@ -22,7 +22,7 @@ const Home = () => {
             Development Division
           </p>
           <p className="mb-9 md:mb-20 font-Lora font-semibold leading-6 tracking-wider text-slate-200 px-2">
-            Transforming ideas into powerful digital solutions.
+            A community of powerful digital solution makers.
           </p>
           <div>
             <button className="mx-5 bg-bgjar1">
@@ -48,57 +48,6 @@ const Home = () => {
               </Link>
             </button>
           </div>
-
-          {/* <div className="flex items-center gap-2 mt-10 max-md:justify-center">
-            <a
-              className="bg-[#00c0ff] p-1 rounded-full"
-              href="https://www.linkedin.com/in/faysel-code"
-              target="_blank" rel="noreferrer"
-            >
-              <
-                src={linkedin}
-                alt="linkedin"
-                width={18}
-                height={10}
-                className="text-white"
-              />
-            </a>
-            <a
-              className="bg-[#00c0ff] p-1 rounded-full"
-              href="https://x.com/Fayseltonext?t=e6QiHzcUt0omIHpuQcTYiA&s=09"
-              target="_blank"
-            >
-              <Image
-                src={twitter}
-                alt="twitter"
-                width={20}
-                height={10}
-                className=""
-                color="white"
-              />
-            </a>
-
-            <a
-              href="https://github.com/Faysel-Abdella"
-              target="_blank"
-              className=" bg-[#00c0ff] p-1 rounded-full"
-            >
-              <Image src={github} alt="github" width={20} height={10} />
-            </a>
-            <a
-              href="https://t.me/Infomyn"
-              target="_blank"
-              className="bg-[#00c0ff] p-1 rounded-full"
-            >
-              <Image
-                src={telegram}
-                alt="telegram"
-                width={20}
-                height={10}
-                className=""
-              />
-            </a>
-          </div> */}
         </div>
 
         <div className="md:pr-8 text-center max-md:px-20 image-container">

@@ -75,6 +75,19 @@ const NavBar = () => {
 
             <li className="">
               <Link
+                to="services"
+                smooth={true}
+                duration={500}
+                spy={true}
+                className="font-poppins text-white cursor-pointer"
+                onClick={() => setNavBar(!navbar)}
+              >
+                Why Dev?
+              </Link>
+            </li>
+
+            <li className="">
+              <Link
                 to="testimonial"
                 smooth={true}
                 duration={500}

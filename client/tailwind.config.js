@@ -6,6 +6,7 @@ export default {
     extend: {
       backgroundImage: {
         bgjar1: "url('./src/assets/backgrounds/bgjar1.svg')",
+        bgjar2: "url('./src/assets/backgrounds/bgjar2.svg')",
       },
 
       fontFamily: {
