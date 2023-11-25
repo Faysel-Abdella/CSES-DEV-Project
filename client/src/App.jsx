@@ -3,6 +3,7 @@ import Features from "./components/Features";
 import Home from "./components/Home";
 import LandingEvents from "./components/LandingEvents";
 import NavBar from "./components/NavBar";
+import Testimonial from "./components/Testimonial";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About />
       <LandingEvents />
       <Features />
+      <Testimonial />
     </>
   );
 }
