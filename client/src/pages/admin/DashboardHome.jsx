@@ -13,7 +13,6 @@ import { PiMagnifyingGlassPlusFill } from "react-icons/pi";
 // Location
 import { PiMapPinLineDuotone } from "react-icons/pi";
 // notices
-import { PiMegaphoneBold } from "react-icons/pi";
 
 const DashboardHome = () => {
   const [users, setUsers] = useState(0);

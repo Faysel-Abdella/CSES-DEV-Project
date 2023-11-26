@@ -6,6 +6,9 @@ import { BiSolidUser } from "react-icons/bi";
 import { MdOutlineNewspaper } from "react-icons/md";
 import { useState } from "react";
 
+import { PiMegaphoneBold } from "react-icons/pi";
+import { PiMagnifyingGlassPlusFill } from "react-icons/pi";
+
 export default function DashboardLayout() {
   // const [active, setActive] = useState('dashboard');
 
@@ -28,7 +31,7 @@ export default function DashboardLayout() {
         </li>
         <li className="py-2">
           <NavLink
-            to="/dashboard/manage"
+            to="/admin/dashboard/users"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -36,13 +39,13 @@ export default function DashboardLayout() {
                 : "text-gray-light")
             }
           >
-            <FaChartSimple className="mr-3 w-6 h-6" />
-            Manage
+            <BiSolidUser className="mr-3 w-6 h-6" />
+            Users
           </NavLink>
         </li>
         <li className="py-2">
           <NavLink
-            to="/dashboard/service"
+            to="/admin/dashboard/events"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -50,12 +53,12 @@ export default function DashboardLayout() {
                 : "text-gray-light")
             }
           >
-            <RiLayoutMasonryFill className="mr-3 w-6 h-6" /> Work out list
+            <RiLayoutMasonryFill className="mr-3 w-6 h-6" /> Events
           </NavLink>
         </li>
         <li className="py-2">
           <NavLink
-            to="/users"
+            to="/admin/dashboard/opportunities"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -63,12 +66,12 @@ export default function DashboardLayout() {
                 : "text-gray-light")
             }
           >
-            <BiSolidUser className="mr-3 w-6 h-6" /> User
+            <PiMagnifyingGlassPlusFill className="mr-3 w-6 h-6" /> Opportunities
           </NavLink>
         </li>
         <li className="py-2">
           <NavLink
-            to="/dashboard/events"
+            to="/admin/dashboard/notices"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -76,8 +79,8 @@ export default function DashboardLayout() {
                 : "text-gray-light")
             }
           >
-            <MdOutlineNewspaper className="mr-3 w-6 h-6" />
-            Event/Notice
+            <PiMegaphoneBold className="mr-3 w-6 h-6" />
+            Notices
           </NavLink>
         </li>
       </ul>
