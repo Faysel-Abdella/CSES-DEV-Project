@@ -20,6 +20,12 @@ app.get("/test", (req, res, next) => {
   res.json({ message: "Hello world" });
 });
 
+// #### Routes
+const adminRoutes = require("./routes/adminRoutes");
+
+app.use("api/v1/auth", authRoutes);
+app.use("/api/v1/admin", checkIfAdmin, adminRoutes);
+
 //404 middleware
 app.use("*", (req, res, next) => {
   //'*' stands for all routes that do not match the all the above routes
