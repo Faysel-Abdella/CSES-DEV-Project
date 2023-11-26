@@ -2,15 +2,20 @@ const express = require("express");
 
 const router = express.Router();
 
-const { addMember, getAllMembers } = require("../controllers/adminController");
+const {
+  addMember,
+  getAllMembers,
+  getOneMember,
+  deleteMember,
+} = require("../controllers/adminController");
 const { validateAddingMember } = require("../middlewares/validationMiddleware");
 
-router.post("/user/add", validateAddingMember, addMember);
+router.post("/member/add", validateAddingMember, addMember);
 
-router.get("/users/all", getAllMembers);
+router.get("/members/all", getAllMembers);
 
-// router.get("/user/:userId", getOneMember);
+router.get("/member/:memberId", getOneMember);
 
-// router.delete("/user/:userId", deleteMember);
+router.delete("/member/:memberId", deleteMember);
 
 module.exports = router;

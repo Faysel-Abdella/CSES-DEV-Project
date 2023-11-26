@@ -41,3 +41,19 @@ exports.getAllMembers = async (req, res) => {
     .status(StatusCodes.OK)
     .json({ message: "All members obtained successfully", members: members });
 };
+
+exports.getOneMember = async (req, res) => {
+  const memberId = req.params.memberId;
+  console.log(memberId);
+  const member = await Member.find({ _id: memberId });
+
+  if (!member) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No member is registered" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Members obtained successfully", member: member });
+};
