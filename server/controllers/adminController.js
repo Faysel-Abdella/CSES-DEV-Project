@@ -27,3 +27,17 @@ exports.addMember = async (req, res) => {
     .status(StatusCodes.CREATED)
     .json({ message: "Member added successfully" });
 };
+
+exports.getAllMembers = async (req, res) => {
+  const members = await Member.find();
+
+  if (!members) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No member is registered" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "All members obtained successfully", members: members });
+};
