@@ -44,7 +44,6 @@ exports.getAllMembers = async (req, res) => {
 
 exports.getOneMember = async (req, res) => {
   const memberId = req.params.memberId;
-  console.log(memberId);
   const member = await Member.find({ _id: memberId });
 
   if (!member) {
@@ -56,4 +55,19 @@ exports.getOneMember = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ message: "Members obtained successfully", member: member });
+};
+
+exports.deleteMember = async (req, res) => {
+  const memberId = req.params.memberId;
+  const member = await Member.findByIdAndDelete({ _id: memberId });
+
+  if (!member) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No member is registered" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Member removed from the club successfully" });
 };
