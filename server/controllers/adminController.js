@@ -81,3 +81,17 @@ exports.addEvent = async (req, res) => {
   await newEvent.save();
   res.status(StatusCodes.CREATED).json({ message: "Event added successfully" });
 };
+
+exports.getAllEvents = async (req, res) => {
+  const events = await Event.find();
+
+  if (!events) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No event is registered" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "All events obtained successfully", events: events });
+};

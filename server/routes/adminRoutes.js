@@ -8,6 +8,7 @@ const {
   getOneMember,
   deleteMember,
   addEvent,
+  getAllEvents,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -26,7 +27,7 @@ router.delete("/member/:memberId", deleteMember);
 // ### Admin-to-event
 router.post("/event/add", validateAddingEvent, addEvent);
 
-// router.get("/event/all", getAllEvents);
+router.get("/events/all", getAllEvents);
 
 // router.put("/event/:eventId", updateEvent);
 
