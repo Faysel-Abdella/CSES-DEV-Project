@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 
 const Member = require("../models/Member");
 const Admin = require("../models/Admin");
+const Event = require("../models/Event");
 
 exports.addMember = async (req, res) => {
   const email = req.body.email;
@@ -70,4 +71,13 @@ exports.deleteMember = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ message: "Member removed from the club successfully" });
+};
+
+// ###########################   Admin-to-Events ##################################### //
+
+exports.addEvent = async (req, res) => {
+  const newEvent = new Event(req.body);
+
+  await newEvent.save();
+  res.status(StatusCodes.CREATED).json({ message: "Event added successfully" });
 };
