@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const Member = require("../models/Member");
 const Admin = require("../models/Admin");
 const Event = require("../models/Event");
+const Opportunity = require("../models/Opportunity");
 
 exports.addMember = async (req, res) => {
   const email = req.body.email;
@@ -124,4 +125,30 @@ exports.deleteEvent = async (req, res) => {
   }
 
   res.status(StatusCodes.OK).json({ message: "Event deleted successfully" });
+};
+
+// ###########################   Admin-to-Opportunities ##################################### //
+
+exports.addOpportunity = async (req, res) => {
+  const newOpportunity = new Opportunity(req.body);
+
+  await newOpportunity.save();
+  res
+    .status(StatusCodes.CREATED)
+    .json({ message: "Opportunity added successfully" });
+};
+
+exports.getAllOpportunities = async (req, res) => {
+  const opportunities = await Opportunity.find();
+
+  if (!opportunities) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No opportunities is registered" });
+  }
+
+  res.status(StatusCodes.OK).json({
+    message: "All opportunities obtained successfully",
+    opportunities: opportunities,
+  });
 };

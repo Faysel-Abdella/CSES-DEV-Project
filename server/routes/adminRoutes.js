@@ -11,10 +11,13 @@ const {
   getAllEvents,
   updateEvent,
   deleteEvent,
+  addOpportunity,
+  getAllOpportunities,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
   validateAddingEvent,
+  validateAddingOpportunity,
 } = require("../middlewares/validationMiddleware");
 
 // ### Admin-to-member
@@ -34,5 +37,18 @@ router.get("/events/all", getAllEvents);
 router.put("/event/:eventId", validateAddingEvent, updateEvent);
 
 router.delete("/event/:eventId", deleteEvent);
+
+// ### Admin-to-opportunity
+router.post("/opportunity/add", validateAddingOpportunity, addOpportunity);
+
+router.get("/opportunities/all", getAllOpportunities);
+
+// router.put(
+//   "/opportunity/:opportunityId",
+//   validateAddingOpportunity,
+//   updateOpportunity
+// );
+
+// router.delete("/opportunity/:opportunityId", deleteOpportunity);
 
 module.exports = router;

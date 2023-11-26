@@ -65,3 +65,15 @@ exports.validateAddingEvent = withValidatorErrors([
 
   body("time").notEmpty().withMessage("time is required"),
 ]);
+
+exports.validateAddingOpportunity = withValidatorErrors([
+  body("company").notEmpty().withMessage("company is required"),
+
+  body("position").notEmpty().withMessage("position is required"),
+
+  body("jobType").notEmpty().withMessage("jobType is required"),
+
+  body("jobLocation").notEmpty().withMessage("jobLocation is required"),
+
+  body("contact").notEmpty().withMessage("contact is required"),
+]);

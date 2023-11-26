@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const OpportunitySchema = new mongoose.Schema(
   {
@@ -24,5 +24,4 @@ const OpportunitySchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-export default mongoose.model("Opportunity", OpportunitySchema);
+module.exports = mongoose.model("Opportunity", OpportunitySchema);
