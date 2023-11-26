@@ -24,7 +24,9 @@ export const action = async ({ request }) => {
   }
 
   try {
-    const response = await customFetch.post("/auth/login", data);
+    const response = await customFetch.post("/auth/login", data, {
+      withCredentials: true,
+    });
     console.log(response);
     toast.success("Login success", { autoClose: 3000 });
     if (response.data.isAdmin) {

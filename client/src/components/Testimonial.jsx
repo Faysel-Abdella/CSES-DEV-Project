@@ -88,7 +88,7 @@ const Testimonial = () => {
               />
 
               <div className="mx-2">
-                <h1 className="font-semibold text-white">A2SV</h1>
+                <h1 className="font-semibold text-white ">A2SV</h1>
                 <span className="text-sm text-gray-400">
                   Africa to Silicon Valley
                 </span>

@@ -12,7 +12,6 @@ const { StatusCodes } = require("http-status-codes");
 
 const app = express();
 
-app.use(cors());
 dotenv.config();
 app.use(bodyParser.json());
 app.use(express.json());
@@ -87,7 +86,7 @@ mongoose
     if (!admin) {
       const newAdmin = new Admin({
         email: "fayselAdmi@gmail.com",
-        password: await bcrypt.hash("admin_password", 10),
+        password: await bcrypt.hash("090909", 10),
       });
       return newAdmin.save();
     }

@@ -24,12 +24,14 @@ const About = () => {
             About Us
           </p>
           <div className="text-slate-300">
-            👋 Welcome to the CSEC ASTU Development Division! We are a vibrant
-            club nestled within Adama Science and Technology University (ASTU).
-            Our primary mission is to foster creativity and innovation in the
-            lives of our members and beyond. As passionate developers, we come
-            together to build, support, and inspire one another.
-            <p className="mt-10 mb-8">
+            <p className="leading-5">
+              👋 Welcome to the CSEC ASTU Development Division! We are a vibrant
+              club nestled within Adama Science and Technology University
+              (ASTU). Our primary mission is to foster creativity and innovation
+              in the lives of our members and beyond. As passionate developers,
+              we come together to build, support, and inspire one another.
+            </p>
+            <p className="mt-10 mb-8 leading-5">
               At our core, we believe in the power of collaboration and the
               transformative potential of technology. Through our diverse range
               of activities and projects, we aim to enrich the learning
@@ -45,13 +47,13 @@ const About = () => {
             <li className="m-0 float-left  border-2px border-solid border-[#625a7d] max-md:border-none max-md:w-full relative mt-[-2px] ml-[2px] overflow-hidden">
               <ul className="m-0 py-[25px] px-[35px] max-md:pb-0 ">
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     Location
                   </span>
                   <p className="text-[16px] text-gray-400">Adama, Ethiopia</p>
                 </li>
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     Institution
                   </span>
                   <p className="text-[16px] text-gray-400">
@@ -59,7 +61,7 @@ const About = () => {
                   </p>
                 </li>
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     Office
                   </span>
                   <p className="text-[16px] text-gray-400">
@@ -67,7 +69,7 @@ const About = () => {
                   </p>
                 </li>
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     Email
                   </span>
                   <p className="text-[16px] text-gray-400">
@@ -78,13 +80,13 @@ const About = () => {
                   </p>
                 </li>
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     Call
                   </span>
                   <p className="text-[16px] text-gray-400">+251 96813 74 73</p>
                 </li>
                 <li className="m-0 mb-[11px] max-[1600px]:mb-[7px]">
-                  <span className="text-[16px] font-medium inline-block text-white">
+                  <span className="text-[16px] font-medium inline-block text-white mb-1">
                     We are available on:
                     <div className="flex items-center gap-2 mt-2 max-md:justify-center">
                       <a

@@ -11,6 +11,11 @@ const eventSchema = new Schema({
     type: String,
   },
 
+  eventType: {
+    type: String,
+    enum: ["Skill-sharing", "Hackathon", "Tutorial"],
+  },
+
   description: {
     type: String,
   },

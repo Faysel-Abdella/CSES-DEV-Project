@@ -8,10 +8,13 @@ import LandingEvents from "./components/LandingEvents";
 import NavBar from "./components/NavBar";
 import Testimonial from "./components/Testimonial";
 
-// Pages
+// Common pages
 import ErrorPage from "./pages/404";
 import LogIn from "./pages/LoginPage";
 import DashboardLayout from "./components/Layout/DashboardLayout";
+
+// Admin pages
+import DashboardHome from "./pages/admin/DashboardHome";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
@@ -42,7 +45,8 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "",
+        index: true,
+        element: <DashboardHome />,
       },
     ],
   },

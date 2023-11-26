@@ -6,6 +6,7 @@ const { createJWT } = require("../utils/tokenUtil");
 
 const Member = require("../models/Member");
 const Admin = require("../models/Admin");
+const { response } = require("express");
 
 exports.login = async (req, res) => {
   const email = req.body.email;
@@ -35,6 +36,7 @@ exports.login = async (req, res) => {
     res.cookie("devToken", token, {
       httpOnly: false,
       sameSite: "None",
+      path: "/",
       secure: true,
     });
 

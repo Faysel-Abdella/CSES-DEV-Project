@@ -43,7 +43,7 @@ const Features = () => {
             <h2 className="text-3xl font-bold tracking-tight text-white mb-5">
               Collaboration and Learning together:
             </h2>
-            <p className="text-[#D3D8E8] ">
+            <p className="text-[#D3D8E8] leading-6">
               We believe in the power of collaboration and value your time
               throughout the learning process. Our Dev community is full of
               growth-minded developers and students who actively share their
@@ -84,7 +84,7 @@ const Features = () => {
             <h2 className="text-3xl font-bold tracking-tight text-white mb-5">
               above and beyond the expected dedication:
             </h2>
-            <p className="text-[#D3D8E8] text-opacity-100">
+            <p className="text-[#D3D8E8] text-opacity-100 leading-6">
               The environment is a core factor for successful developers. With
               our 14-hour open lab service, you can concentrate and put maximum
               effort into learning and developing. One of the main benefits our
@@ -121,7 +121,7 @@ const Features = () => {
             <h2 className="text-3xl font-bold tracking-tight text-white mb-5">
               A fresh perspective and imaginative solutions:
             </h2>
-            <p className="text-[#D3D8E8] text-opacity-100">
+            <p className="text-[#D3D8E8] text-opacity-100 leading-63">
               We bring a fresh perspective to each members, pushing boundaries
               and exploring new possibilities. We not only appreciate a fresh
               perspective and imaginative solutions, we reward on it and change

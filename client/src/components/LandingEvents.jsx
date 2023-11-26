@@ -37,7 +37,7 @@ const LandingEvents = () => {
                 Skill Sharing
               </h3>
 
-              <p className="text-[#D3D8E8]">
+              <p className="text-[#D3D8E8] leading-5">
                 Join us for Skill Sharing, a seminar event where we invite
                 successful developers to share their technical and soft skills.
                 A total of more than 10 skill sharing events have been prepared,
@@ -45,7 +45,10 @@ const LandingEvents = () => {
               </p>
 
               <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
-                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                <a
+                  className="font-semibold bg-slate-400 py-1 px-3 rounded-full"
+                  href="/login"
+                >
                   Login for more
                 </a>
               </p>
@@ -69,7 +72,7 @@ const LandingEvents = () => {
                 Hackathons
               </h3>
 
-              <p className="text-[#D3D8E8]">
+              <p className="text-[#D3D8E8] leading-5">
                 We believe that adopting a competitive mindset can lead to
                 extraordinary results. Therefore, we regularly organize
                 hackathons for our members, providing them with a platform to
@@ -79,7 +82,10 @@ const LandingEvents = () => {
               </p>
 
               <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
-                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                <a
+                  className="font-semibold bg-slate-400 py-1 px-3 rounded-full"
+                  href="/login"
+                >
                   Login for more
                 </a>
               </p>
@@ -103,7 +109,7 @@ const LandingEvents = () => {
                 Tutorials
               </h3>
 
-              <p className="text-[#D3D8E8]">
+              <p className="text-[#D3D8E8] leading-5">
                 Our valuable tutorial programs introduce members to new
                 technologies and development tools. Many participants become
                 experts in their field through these tutorials. Led by
@@ -112,7 +118,10 @@ const LandingEvents = () => {
               </p>
 
               <p className="absolute bottom-6 left-[50%] translate-x-[-50%]  cursor-pointer">
-                <a className="font-semibold bg-slate-400 py-1 px-3 rounded-full">
+                <a
+                  className="font-semibold bg-slate-400 py-1 px-3 rounded-full"
+                  href="/login"
+                >
                   Login for more
                 </a>
               </p>

@@ -14,7 +14,7 @@ export default function DashboardLayout() {
       <ul className="mt-9 ml-8 space-y-4">
         <li className="py-2">
           <NavLink
-            to="/dashboard"
+            to="/admin/dashboard/home"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
