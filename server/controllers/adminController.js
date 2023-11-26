@@ -26,13 +26,15 @@ exports.addMember = async (req, res) => {
   });
 
   await newMember.save();
+
+  const members = await Member.find().sort({ timestamp: -1 });
   res
     .status(StatusCodes.CREATED)
-    .json({ message: "Member added successfully" });
+    .json({ message: "Member added successfully", members: members });
 };
 
 exports.getAllMembers = async (req, res) => {
-  const members = await Member.find();
+  const members = await Member.find().sort({ timestamp: -1 });
 
   if (!members) {
     return res
@@ -70,7 +72,7 @@ exports.deleteMember = async (req, res) => {
       .json({ message: "No member is registered" });
   }
 
-  const restMembers = await Member.find();
+  const restMembers = await Member.find().sort({ timestamp: -1 });
 
   res.status(StatusCodes.OK).json({
     message: "Member removed from the club successfully",
@@ -128,7 +130,11 @@ exports.deleteEvent = async (req, res) => {
       .json({ message: "No event is found" });
   }
 
-  res.status(StatusCodes.OK).json({ message: "Event deleted successfully" });
+  const events = await Event.find().sort({ timestamp: -1 });
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Event deleted successfully", events: events });
 };
 
 // ###########################   Admin-to-Opportunities ##################################### //

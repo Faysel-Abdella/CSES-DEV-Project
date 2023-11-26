@@ -47,5 +47,5 @@ export default {
     },
   },
   // plugins: [require("daisyui")],
-  plugins: [require("tailgrids/plugin")],
+  plugins: [require("tailgrids/plugin"), require("flowbite")],
 };

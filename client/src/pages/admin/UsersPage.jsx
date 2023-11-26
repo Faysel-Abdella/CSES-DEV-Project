@@ -1,11 +1,13 @@
 import { PiUsersThree } from "react-icons/pi";
 import { PiUserBold } from "react-icons/pi";
-
+import { Link, Form, redirect } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import customFetch from "../../utils/customFetch";
 import MemberProfileForAdmin from "../../components/small/MeberProfileForAdmin";
 
 import { toast } from "react-toastify";
+import AddNewMember from "./AddNewMember";
 
 const UsersPage = () => {
   const [members, setMembers] = useState([]);
@@ -15,38 +17,39 @@ const UsersPage = () => {
   const [fifth, setFifth] = useState(0);
   const [all, setAll] = useState(0);
 
+  const fetchData = async () => {
+    try {
+      const response = await customFetch.get("/admin/members/all");
+      const members = response.data.members;
+
+      setAll(members.length);
+      setMembers(members);
+
+      setSecond(0);
+      setThird(0);
+      setFourth(0);
+      setFifth(0);
+
+      members.forEach((member) => {
+        if (member.year == "2") {
+          setSecond((prev) => prev + 1);
+        }
+        if (member.year == "3") {
+          setThird((prev) => prev + 1);
+        }
+        if (member.year == "4") {
+          setFourth((prev) => prev + 1);
+        }
+        if (member.year == "5") {
+          setFifth((prev) => prev + 1);
+        }
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await customFetch.get("/admin/members/all");
-        const members = response.data.members;
-
-        setAll(members.length);
-        setMembers(members);
-
-        setSecond(0);
-        setThird(0);
-        setFourth(0);
-        setFifth(0);
-
-        members.forEach((member) => {
-          if (member.year == "2") {
-            setSecond((prev) => prev + 1);
-          }
-          if (member.year == "3") {
-            setThird((prev) => prev + 1);
-          }
-          if (member.year == "4") {
-            setFourth((prev) => prev + 1);
-          }
-          if (member.year == "5") {
-            setFifth((prev) => prev + 1);
-          }
-        });
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
     fetchData();
   }, []);
 
@@ -56,8 +59,9 @@ const UsersPage = () => {
         withCredentials: true,
       });
 
-      setMembers(response.data.restMembers);
-
+      setMembers((prevMembers) =>
+        prevMembers.filter((member) => member._id !== id)
+      );
       toast.success("Member removed from the club", { autoClose: 3000 });
     } catch (error) {
       console.log(error);
@@ -116,8 +120,9 @@ const UsersPage = () => {
           </div>
         </div>
       </div>
+      <AddNewMember setMembers={setMembers} fetchData={fetchData} />
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-3 mt-8">
         {members.map((member) => {
           const joinOnDate = new Date(member.joinOn);
 

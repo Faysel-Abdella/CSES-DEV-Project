@@ -15,10 +15,10 @@ import DashboardLayout from "./components/Layout/DashboardLayout";
 
 // Admin pages
 import DashboardHome from "./pages/admin/DashboardHome";
+import UsersPage from "./pages/admin/UsersPage";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
-import UsersPage from "./pages/admin/UsersPage";
 
 const router = createBrowserRouter([
   {
