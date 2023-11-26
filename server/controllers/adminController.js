@@ -215,3 +215,20 @@ exports.getAllNotices = async (req, res) => {
     notices: notices,
   });
 };
+
+exports.updateNotice = async (req, res) => {
+  const noticeId = req.params.noticeId;
+  const updatedNotice = await Notice.findByIdAndUpdate(noticeId, req.body, {
+    new: true,
+  });
+
+  if (!updatedNotice) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No notice is found" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Notice updated successfully", updatedNotice });
+};
