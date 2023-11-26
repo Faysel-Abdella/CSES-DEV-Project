@@ -18,6 +18,7 @@ import DashboardHome from "./pages/admin/DashboardHome";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
+import UsersPage from "./pages/admin/UsersPage";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <DashboardHome />,
+      },
+      {
+        path: "users",
+        element: <UsersPage />,
       },
     ],
   },

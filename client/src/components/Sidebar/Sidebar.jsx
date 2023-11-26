@@ -31,7 +31,7 @@ export default function DashboardLayout() {
         </li>
         <li className="py-2">
           <NavLink
-            to="/admin/dashboard/users"
+            to="/admin/dashboard/home/users"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -40,12 +40,12 @@ export default function DashboardLayout() {
             }
           >
             <BiSolidUser className="mr-3 w-6 h-6" />
-            Users
+            Members
           </NavLink>
         </li>
         <li className="py-2">
           <NavLink
-            to="/admin/dashboard/events"
+            to="/admin/dashboard/home/events"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -58,7 +58,7 @@ export default function DashboardLayout() {
         </li>
         <li className="py-2">
           <NavLink
-            to="/admin/dashboard/opportunities"
+            to="/admin/dashboard/home/opportunities"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive
@@ -71,7 +71,7 @@ export default function DashboardLayout() {
         </li>
         <li className="py-2">
           <NavLink
-            to="/admin/dashboard/notices"
+            to="/admin/dashboard/home/notices"
             className={({ isActive }) =>
               "group flex font-medium items-center border-r-4 border-transparent rounded-sm " +
               (isActive

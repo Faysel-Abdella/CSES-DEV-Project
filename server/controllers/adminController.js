@@ -70,9 +70,12 @@ exports.deleteMember = async (req, res) => {
       .json({ message: "No member is registered" });
   }
 
-  res
-    .status(StatusCodes.OK)
-    .json({ message: "Member removed from the club successfully" });
+  const restMembers = await Member.find();
+
+  res.status(StatusCodes.OK).json({
+    message: "Member removed from the club successfully",
+    restMembers,
+  });
 };
 
 // ###########################   Admin-to-Events ##################################### //
