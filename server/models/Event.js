@@ -30,6 +30,11 @@ const eventSchema = new Schema({
   time: {
     type: String,
   },
+
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("Event", eventSchema);

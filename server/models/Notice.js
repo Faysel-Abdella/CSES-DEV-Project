@@ -11,6 +11,11 @@ const noticeSchema = new Schema(
     description: {
       type: String,
     },
+
+    timestamp: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     timestamps: true,

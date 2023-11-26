@@ -85,7 +85,7 @@ exports.addEvent = async (req, res) => {
 };
 
 exports.getAllEvents = async (req, res) => {
-  const events = await Event.find();
+  const events = await Event.find().sort({ timestamp: -1 });
 
   if (!events) {
     return res
@@ -140,7 +140,7 @@ exports.addOpportunity = async (req, res) => {
 };
 
 exports.getAllOpportunities = async (req, res) => {
-  const opportunities = await Opportunity.find();
+  const opportunities = await Opportunity.find().sort({ timestamp: -1 });
 
   if (!opportunities) {
     return res
@@ -202,7 +202,7 @@ exports.addNotice = async (req, res) => {
 };
 
 exports.getAllNotices = async (req, res) => {
-  const notices = await Notice.find();
+  const notices = await Notice.find().sort({ timestamp: -1 });
 
   if (!notices) {
     return res

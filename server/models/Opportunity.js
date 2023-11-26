@@ -21,6 +21,11 @@ const OpportunitySchema = new mongoose.Schema(
     contact: {
       type: String,
     },
+
+    timestamp: {
+      type: Date,
+      default: Date.now,
+    },
   },
   { timestamps: true }
 );
