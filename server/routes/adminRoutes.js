@@ -13,6 +13,7 @@ const {
   deleteEvent,
   addOpportunity,
   getAllOpportunities,
+  updateOpportunity,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -43,11 +44,11 @@ router.post("/opportunity/add", validateAddingOpportunity, addOpportunity);
 
 router.get("/opportunities/all", getAllOpportunities);
 
-// router.put(
-//   "/opportunity/:opportunityId",
-//   validateAddingOpportunity,
-//   updateOpportunity
-// );
+router.put(
+  "/opportunity/:opportunityId",
+  validateAddingOpportunity,
+  updateOpportunity
+);
 
 // router.delete("/opportunity/:opportunityId", deleteOpportunity);
 

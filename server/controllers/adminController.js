@@ -152,3 +152,24 @@ exports.getAllOpportunities = async (req, res) => {
     opportunities: opportunities,
   });
 };
+
+exports.updateOpportunity = async (req, res) => {
+  const opportunityId = req.params.opportunityId;
+  const updatedOpportunity = await Opportunity.findByIdAndUpdate(
+    opportunityId,
+    req.body,
+    {
+      new: true,
+    }
+  );
+
+  if (!updatedOpportunity) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No opportunity is found" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Opportunity updated successfully", updatedOpportunity });
+};
