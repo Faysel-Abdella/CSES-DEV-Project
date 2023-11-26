@@ -10,6 +10,7 @@ const {
   addEvent,
   getAllEvents,
   updateEvent,
+  deleteEvent,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -32,6 +33,6 @@ router.get("/events/all", getAllEvents);
 
 router.put("/event/:eventId", validateAddingEvent, updateEvent);
 
-// router.delete("/event/:eventId", deleteMEvent);
+router.delete("/event/:eventId", deleteEvent);
 
 module.exports = router;

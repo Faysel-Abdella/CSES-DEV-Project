@@ -60,7 +60,7 @@ exports.getOneMember = async (req, res) => {
 
 exports.deleteMember = async (req, res) => {
   const memberId = req.params.memberId;
-  const member = await Member.findByIdAndDelete({ _id: memberId });
+  const member = await Member.findByIdAndDelete(memberId);
 
   if (!member) {
     return res
@@ -111,4 +111,17 @@ exports.updateEvent = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ message: "Event updated successfully", updatedEvents });
+};
+
+exports.deleteEvent = async (req, res) => {
+  const eventId = req.params.eventId;
+  const event = await Event.findByIdAndDelete(eventId);
+
+  if (!event) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No event is found" });
+  }
+
+  res.status(StatusCodes.OK).json({ message: "Event deleted successfully" });
 };
