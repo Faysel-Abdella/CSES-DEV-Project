@@ -25,6 +25,7 @@ const memberSchema = new Schema({
 
   joinOn: {
     type: Date,
+    default: new Date().toISOString(),
   },
 
   role: {

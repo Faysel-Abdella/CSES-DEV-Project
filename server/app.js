@@ -6,15 +6,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const { StatusCodes } = require("http-status-codes");
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
 dotenv.config();
+app.use(bodyParser.json());
 app.use(express.json());
+app.use(cookieParser());
 
 // manage CORS
 app.use(
@@ -70,6 +72,7 @@ app.use("*", (req, res, next) => {
 app.use((error, req, res, next) => {
   const statusCode = error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR;
   const message = error.message || "Something went error(error msg not passed)";
+  console.log(error);
   res.status(statusCode).json({ message: message });
 });
 

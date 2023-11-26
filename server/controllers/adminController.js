@@ -7,7 +7,7 @@ const Admin = require("../models/Admin");
 
 exports.addMember = async (req, res) => {
   const email = req.body.email;
-  const password = req.body.email;
+  const password = req.body.password;
   const name = req.body.name;
   const year = req.body.year;
 
