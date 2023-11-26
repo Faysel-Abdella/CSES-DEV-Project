@@ -16,15 +16,49 @@ app.use(bodyParser.json());
 dotenv.config();
 app.use(express.json());
 
+// manage CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      //   "https://bag6xc5pd2.us-east-1.awsapprunner.com/",
+    ],
+    credentials: true,
+  })
+);
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", [
+    "http://localhost:5173",
+    // "https://bag6xc5pd2.us-east-1.awsapprunner.com/",
+  ]);
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
+
+const bcrypt = require("bcryptjs");
+
+// #### Test
+
 app.get("/test", (req, res, next) => {
   res.json({ message: "Hello world" });
 });
 
+// #### Models
+const Admin = require("./models/Admin");
+
+// #### Middlewares
+
+const { authenticateAdmin } = require("./middlewares/authMiddleware");
+const { authenticateMember } = require("./middlewares/authMiddleware");
+
 // #### Routes
+const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
-app.use("api/v1/auth", authRoutes);
-app.use("/api/v1/admin", checkIfAdmin, adminRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
 
 //404 middleware
 app.use("*", (req, res, next) => {
@@ -41,6 +75,19 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(process.env.MONGO_URL)
+  .then(() => {
+    return Admin.findOne({ role: "admin" });
+  })
+  .then(async (admin) => {
+    if (!admin) {
+      const newAdmin = new Admin({
+        email: "fayselAdmi@gmail.com",
+        password: await bcrypt.hash("admin_password", 10),
+      });
+      return newAdmin.save();
+    }
+    return admin;
+  })
   .then((result) => {
     app.listen(process.env.PORT || 8080, () => {
       console.log("Server running ... :)");

@@ -2,6 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/user/add", verifyJWT, checkUser);
+const { addMember } = require("../controllers/adminController");
+
+router.post("/user/add", addMember);
 
 module.exports = router;

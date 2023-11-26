@@ -11,7 +11,7 @@ exports.addMember = async (req, res) => {
   const name = req.body.name;
   const year = req.body.year;
 
-  const hashedPassword = await hashPassword(password);
+  const hashedPassword = await bcrypt.hash(password, 10);
 
   //The validation of checking if a member is found with the same email is in the validationMiddleware
 

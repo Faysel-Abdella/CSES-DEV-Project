@@ -9,13 +9,13 @@ const Admin = require("../models/Admin");
 
 exports.login = async (req, res) => {
   const email = req.body.email;
-  const password = req.body.email;
+  const password = req.body.password;
 
   const isAdmin = await Admin.findOne({ email: email });
 
   const isMember = await Member.findOne({ email: email });
 
-  if (!isAdmin || !isMember) {
+  if (!isAdmin & !isMember) {
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ message: "Incorrect email" });
@@ -23,6 +23,7 @@ exports.login = async (req, res) => {
 
   if (isAdmin) {
     const isMatch = await bcrypt.compare(password, isAdmin.password);
+    console.log(password);
     if (!isMatch) {
       return res
         .status(StatusCodes.BAD_REQUEST)
@@ -48,7 +49,7 @@ exports.login = async (req, res) => {
         .json({ message: "Incorrect password" });
     }
 
-    const token = createJWT({ userId: isMember._id, role: "member" });
+    const token = createJWT({ memberId: isMember._id, role: "member" });
 
     res.cookie("devToken", token, {
       httpOnly: false,
