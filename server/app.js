@@ -72,7 +72,7 @@ app.use("*", (req, res, next) => {
 app.use((error, req, res, next) => {
   const statusCode = error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR;
   const message = error.message || "Something went error(error msg not passed)";
-  console.log(error);
+  //   console.log(error);
   res.status(statusCode).json({ message: message });
 });
 

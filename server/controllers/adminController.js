@@ -95,3 +95,20 @@ exports.getAllEvents = async (req, res) => {
     .status(StatusCodes.OK)
     .json({ message: "All events obtained successfully", events: events });
 };
+
+exports.updateEvent = async (req, res) => {
+  const eventId = req.params.eventId;
+  const updatedEvents = await Event.findByIdAndUpdate(eventId, req.body, {
+    new: true,
+  });
+
+  if (!updatedEvents) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No event is found" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Event updated successfully", updatedEvents });
+};
