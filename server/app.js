@@ -58,9 +58,11 @@ const { authenticateMember } = require("./middlewares/authMiddleware");
 // #### Routes
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const memberRoutes = require("./routes/memberRoutes");
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
+app.use("/api/v1/member", authenticateMember, memberRoutes);
 
 //404 middleware
 app.use("*", (req, res, next) => {

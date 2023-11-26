@@ -10,6 +10,8 @@ const Notice = require("../models/Notice");
 exports.getAllMembers = async (req, res) => {
   const members = await Member.find();
 
+  console.log(req.memberId);
+
   if (!members) {
     return res
       .status(StatusCodes.OK)

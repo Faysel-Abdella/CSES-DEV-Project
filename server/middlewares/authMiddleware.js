@@ -13,8 +13,9 @@ exports.authenticateAdmin = async (req, res, next) => {
 
   try {
     const admin = verifyJWT(token);
-    const adminId = admin.adminId;
+    const adminId = admin.userId;
     const role = admin.role;
+    console.log(admin);
 
     if (role !== "admin") {
       return res

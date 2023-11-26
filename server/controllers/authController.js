@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
 
     return res
       .status(StatusCodes.OK)
-      .json({ message: "Admin successfully logged in" });
+      .json({ message: "Admin successfully logged in", isAdmin: true });
   } else if (isMember) {
     const isMatch = await bcrypt.compare(password, isMember.password);
     if (!isMatch) {
@@ -59,6 +59,6 @@ exports.login = async (req, res) => {
 
     return res
       .status(StatusCodes.OK)
-      .json({ message: "Member successfully logged in" });
+      .json({ message: "Member successfully logged in", isAdmin: false });
   }
 };
