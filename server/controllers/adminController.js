@@ -6,6 +6,7 @@ const Member = require("../models/Member");
 const Admin = require("../models/Admin");
 const Event = require("../models/Event");
 const Opportunity = require("../models/Opportunity");
+const Notice = require("../models/Notice");
 
 exports.addMember = async (req, res) => {
   const email = req.body.email;
@@ -187,4 +188,15 @@ exports.deleteOpportunity = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ message: "Opportunity deleted successfully" });
+};
+
+// ###########################   Admin-to-Notice ##################################### //
+
+exports.addNotice = async (req, res) => {
+  const newNotice = new Notice(req.body);
+
+  await newNotice.save();
+  res
+    .status(StatusCodes.CREATED)
+    .json({ message: "Notice added successfully" });
 };

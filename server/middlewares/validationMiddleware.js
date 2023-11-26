@@ -77,3 +77,9 @@ exports.validateAddingOpportunity = withValidatorErrors([
 
   body("contact").notEmpty().withMessage("contact is required"),
 ]);
+
+exports.validateAddingNotice = withValidatorErrors([
+  body("title").notEmpty().withMessage("title is required"),
+
+  body("description").notEmpty().withMessage("description is required"),
+]);

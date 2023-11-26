@@ -15,11 +15,13 @@ const {
   getAllOpportunities,
   updateOpportunity,
   deleteOpportunity,
+  addNotice,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
   validateAddingEvent,
   validateAddingOpportunity,
+  validateAddingNotice,
 } = require("../middlewares/validationMiddleware");
 
 // ### Admin-to-member
@@ -52,5 +54,14 @@ router.put(
 );
 
 router.delete("/opportunity/:opportunityId", deleteOpportunity);
+
+// ### Admin-to-notice
+router.post("/notice/add", validateAddingNotice, addNotice);
+
+// router.get("/notices/all", getAllNotices);
+
+// router.put("/notice/:noticeId", validateAddingNotice, updateNotice);
+
+// router.delete("/notice/:noticeId", deleteNotice);
 
 module.exports = router;
