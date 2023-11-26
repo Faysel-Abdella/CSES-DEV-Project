@@ -173,3 +173,18 @@ exports.updateOpportunity = async (req, res) => {
     .status(StatusCodes.OK)
     .json({ message: "Opportunity updated successfully", updatedOpportunity });
 };
+
+exports.deleteOpportunity = async (req, res) => {
+  const opportunityId = req.params.opportunityId;
+  const opportunity = await Opportunity.findByIdAndDelete(opportunityId);
+
+  if (!opportunity) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No opportunity is found" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Opportunity deleted successfully" });
+};

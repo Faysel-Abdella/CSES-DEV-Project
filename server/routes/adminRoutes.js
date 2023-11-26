@@ -14,6 +14,7 @@ const {
   addOpportunity,
   getAllOpportunities,
   updateOpportunity,
+  deleteOpportunity,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -50,6 +51,6 @@ router.put(
   updateOpportunity
 );
 
-// router.delete("/opportunity/:opportunityId", deleteOpportunity);
+router.delete("/opportunity/:opportunityId", deleteOpportunity);
 
 module.exports = router;
