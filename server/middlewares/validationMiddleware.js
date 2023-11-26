@@ -49,3 +49,19 @@ exports.validateAddingMember = withValidatorErrors([
 
   body("year").notEmpty().withMessage("year is required"),
 ]);
+
+exports.validateAddingEvent = withValidatorErrors([
+  body("title").notEmpty().withMessage("title is required"),
+
+  body("subTitle").notEmpty().withMessage("subTitle is required"),
+
+  body("description").notEmpty().withMessage("description is required"),
+
+  body("imageURL").notEmpty().withMessage("imageURL is required"),
+
+  body("place").notEmpty().withMessage("place is required"),
+
+  body("date").notEmpty().withMessage("date is required"),
+
+  body("time").notEmpty().withMessage("time is required"),
+]);
