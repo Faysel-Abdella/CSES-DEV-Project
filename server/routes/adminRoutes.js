@@ -16,6 +16,7 @@ const {
   updateOpportunity,
   deleteOpportunity,
   addNotice,
+  getAllNotices,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -58,7 +59,7 @@ router.delete("/opportunity/:opportunityId", deleteOpportunity);
 // ### Admin-to-notice
 router.post("/notice/add", validateAddingNotice, addNotice);
 
-// router.get("/notices/all", getAllNotices);
+router.get("/notices/all", getAllNotices);
 
 // router.put("/notice/:noticeId", validateAddingNotice, updateNotice);
 

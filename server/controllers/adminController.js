@@ -200,3 +200,18 @@ exports.addNotice = async (req, res) => {
     .status(StatusCodes.CREATED)
     .json({ message: "Notice added successfully" });
 };
+
+exports.getAllNotices = async (req, res) => {
+  const notices = await Notice.find();
+
+  if (!notices) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No notices is registered" });
+  }
+
+  res.status(StatusCodes.OK).json({
+    message: "All notices obtained successfully",
+    notices: notices,
+  });
+};
