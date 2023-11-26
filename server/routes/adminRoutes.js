@@ -18,6 +18,7 @@ const {
   addNotice,
   getAllNotices,
   updateNotice,
+  deleteNotice,
 } = require("../controllers/adminController");
 const {
   validateAddingMember,
@@ -64,6 +65,6 @@ router.get("/notices/all", getAllNotices);
 
 router.put("/notice/:noticeId", validateAddingNotice, updateNotice);
 
-// router.delete("/notice/:noticeId", deleteNotice);
+router.delete("/notice/:noticeId", deleteNotice);
 
 module.exports = router;

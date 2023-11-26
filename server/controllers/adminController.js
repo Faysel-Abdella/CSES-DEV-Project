@@ -232,3 +232,16 @@ exports.updateNotice = async (req, res) => {
     .status(StatusCodes.OK)
     .json({ message: "Notice updated successfully", updatedNotice });
 };
+
+exports.deleteNotice = async (req, res) => {
+  const noticeId = req.params.noticeId;
+  const notice = await Notice.findByIdAndDelete(noticeId);
+
+  if (!notice) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "No notice is found" });
+  }
+
+  res.status(StatusCodes.OK).json({ message: "notice deleted successfully" });
+};
