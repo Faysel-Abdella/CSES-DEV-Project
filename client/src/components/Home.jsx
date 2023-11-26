@@ -26,26 +26,20 @@ const Home = () => {
           </p>
           <div>
             <button className="mx-5 bg-bgjar1">
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                spy={true}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeSppvxQC8evzOgp8lREM0UHYgt3A49LwNaCIDjUelC6npDkw/closedform"
                 className=" max-lg:py-[13px] max-lg:px-[38px] py-[15px] px-[20px] rounded-[50px] bg-[#00c0ff] text-white text-lg font-semibold"
               >
                 Register
-              </Link>
+              </a>
             </button>
             <button>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                spy={true}
+              <a
+                href="/login"
                 className="max-lg:py-[13px] max-lg:px-[38px] py-[15px] px-[20px]  rounded-[50px] bg-[#00c0ff] text-white text-lg font-semibold"
               >
                 Login
-              </Link>
+              </a>
             </button>
           </div>
         </div>

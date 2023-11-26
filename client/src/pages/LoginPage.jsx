@@ -17,15 +17,21 @@ export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   const errors = { message: "" };
+
   if (data.password.length < 3) {
     errors.message = "password too short";
     return errors;
   }
 
   try {
-    await customFetch.post("/auth/login", data);
+    const response = await customFetch.post("/auth/login", data);
+    console.log(response);
     toast.success("Login success", { autoClose: 3000 });
-    return redirect("/dashboard/home");
+    if (response.data.isAdmin) {
+      return redirect("/admin/dashboard/home");
+    } else {
+      return redirect("/member/dashboard/home");
+    }
   } catch (error) {
     // toast.error(error?.response?.data?.message);
     error.message = error?.response?.data?.message;
