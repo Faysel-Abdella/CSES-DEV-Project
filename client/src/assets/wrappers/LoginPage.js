@@ -7,7 +7,8 @@ const Wrapper = styled.section`
   display: grid;
   align-items: center;
   font-family: "Poppins", "sans-serif";
-  background-image: url(${f});
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 37 84 / var(--tw-bg-opacity));
   /* background-repeat: no-repeat; */
   object-fit: cover;
   .logo {
