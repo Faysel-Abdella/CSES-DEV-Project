@@ -2,8 +2,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 import home from "../assets/backgrounds/home.svg";
 
-import bgjar1 from "../assets/backgrounds/bgjar1.svg";
-
 const Home = () => {
   return (
     <section

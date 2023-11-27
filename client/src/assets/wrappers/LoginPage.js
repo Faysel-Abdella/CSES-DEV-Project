@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import f from "../backgrounds/bgjar2.svg";
-
 const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
