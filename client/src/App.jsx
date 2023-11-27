@@ -23,6 +23,7 @@ import EventsPage from "./pages/admin/EventsPage";
 import MemberLayout from "./components/Layout/MemberLayout";
 import MemberDashboard from "./pages/member/MemberDashboard";
 import MemberSideBar from "./components/Sidebar/MemberSideBar";
+import MemberEvents from "./pages/member/MemberEvents";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
@@ -84,7 +85,7 @@ const router = createBrowserRouter([
       },
       {
         path: "events",
-        element: <EventsPage />,
+        element: <MemberEvents />,
       },
     ],
   },
