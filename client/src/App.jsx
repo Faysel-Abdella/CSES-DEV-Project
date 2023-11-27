@@ -16,10 +16,13 @@ import DashboardLayout from "./components/Layout/DashboardLayout";
 // Admin pages
 import DashboardHome from "./pages/admin/DashboardHome";
 import UsersPage from "./pages/admin/UsersPage";
+import EditEventPage from "./pages/admin/EditEventPage";
+import EventsPage from "./pages/admin/EventsPage";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
-import EventsPage from "./pages/admin/EventsPage";
+import { loader as editEventLoader } from "./pages/admin/EditEventPage";
+import { action as editEventAction } from "./pages/admin/EditEventPage";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +60,12 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <EventsPage />,
+      },
+      {
+        path: "edit-event/:id",
+        element: <EditEventPage />,
+        loader: editEventLoader,
+        action: editEventAction,
       },
     ],
   },

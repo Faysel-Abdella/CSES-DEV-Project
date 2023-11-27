@@ -59,8 +59,6 @@ exports.validateAddingEvent = withValidatorErrors([
 
   body("description").notEmpty().withMessage("description is required"),
 
-  body("imageURL").notEmpty().withMessage("imageURL is required"),
-
   body("place").notEmpty().withMessage("place is required"),
 
   body("date").notEmpty().withMessage("date is required"),

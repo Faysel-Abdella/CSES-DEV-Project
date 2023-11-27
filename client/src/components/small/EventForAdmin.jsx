@@ -5,11 +5,13 @@ import { FaRegClock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const EventForAdmin = ({
+  _id,
   title,
   subTitle,
   description,
   place,
   time,
+  date,
   deleteHandler,
   eventType,
 }) => {
@@ -18,17 +20,10 @@ const EventForAdmin = ({
       <section className="bg-blue-950 py-5 px-5 rounded-2xl text-white font-poppins relative">
         <div>
           <h2 className="text-[23px] bg-blue-500 inline-block rounded-2xl px-2 py-2 mb-3">
-            How to develop?
+            {title}
           </h2>
-          <h3 className="mb-6 text-center text-[20px]">
-            A complete giude of developing
-          </h3>
-          <p className="mb-3 text-[18px] leading-6">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
-            earum ullam nisi a consequatur labore ad repudiandae? Deserunt
-            distinctio, aut natus qui ducimus magnam accusantium repellat
-            tempore animi, maxime aliquam.
-          </p>
+          <h3 className="mb-6 text-center text-[20px]">{subTitle}</h3>
+          <p className="mb-3 text-[18px] leading-6">{description}</p>
           <div className="flex gap-8 mt-10">
             <p className="flex items-center">
               <span>
@@ -40,7 +35,9 @@ const EventForAdmin = ({
               <span>
                 <FaRegClock className="text-[30px]" />
               </span>
-              <span className="ml-1">{time}</span>
+              <span className="ml-1">
+                {date}, {time}
+              </span>
             </p>
           </div>
         </div>
@@ -51,7 +48,10 @@ const EventForAdmin = ({
           <span> {eventType}</span>
         </p>
         <div className="flex justify-center gap-2 absolute bottom-2 right-4">
-          <Link className="bg-green-700 py-3 px-3 rounded-2xl hover:bg-green-500 text-white text-[18px]">
+          <Link
+            className="bg-green-700 py-3 px-3 rounded-2xl hover:bg-green-500 text-white text-[18px]"
+            to={`../edit-event/${_id}`}
+          >
             Edit Event
           </Link>
           <button

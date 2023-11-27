@@ -125,17 +125,27 @@ const EventsPage = () => {
 
       <section className="flex flex-col gap-3 mt-8">
         {events.map((event) => {
-          const { _id, title, subTitle, description, place, time, eventType } =
-            event;
+          const {
+            _id,
+            title,
+            subTitle,
+            description,
+            place,
+            time,
+            eventType,
+            date,
+          } = event;
 
           return (
             <EventForAdmin
               key={_id}
+              _id={_id}
               title={title}
               subTitle={subTitle}
               description={description}
               place={place}
               time={time}
+              date={date}
               eventType={eventType}
               deleteHandler={() => deleteHandler(_id)}
             />

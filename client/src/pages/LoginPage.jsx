@@ -43,7 +43,7 @@ export const action = async ({ request }) => {
 
 const LogIn = () => {
   const navigation = useNavigation();
-  const isSubmitting = navigation === "submitting";
+  const isSubmitting = navigation.state === "submitting";
 
   // using the data returned from the action
   const errors = useActionData();

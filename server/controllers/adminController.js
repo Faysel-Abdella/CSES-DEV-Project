@@ -103,6 +103,21 @@ exports.getAllEvents = async (req, res) => {
     .json({ message: "All events obtained successfully", events: events });
 };
 
+exports.getOneEvent = async (req, res) => {
+  const eventId = req.params.eventId;
+  const event = await Event.find({ _id: eventId });
+
+  if (!event) {
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "No event is registered" });
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ message: "Events obtained successfully", event: event });
+};
+
 exports.updateEvent = async (req, res) => {
   const eventId = req.params.eventId;
   const updatedEvents = await Event.findByIdAndUpdate(eventId, req.body, {
