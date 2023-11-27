@@ -5,7 +5,7 @@ import skill from "../assets/servicesSVGs/consultancy.svg";
 const LandingEvents = () => {
   return (
     <section
-      className="max-container px-10 max-md:px-3 pt-20 font-poppins bg-bgjar2"
+      className="max-container px-10 max-md:px-3 pt-20 font-poppins bg-blue-dark"
       id="events"
     >
       <p></p>

@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <App className="bg-blue-dark" />
     <ToastContainer position="top-center" style={{ fontSize: "16px" }} />;
   </React.StrictMode>
 );

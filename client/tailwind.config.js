@@ -5,11 +5,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        bgjar1: "url('./src/assets/backgrounds/bgjar1.svg')",
-        bgjar2: "url('./src/assets/backgrounds/bgjar2.svg')",
-      },
-
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         Lora: ["Lora", "sans-serif"],
