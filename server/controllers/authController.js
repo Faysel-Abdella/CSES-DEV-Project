@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 
 const bcrypt = require("bcryptjs");
 
-const { createJWT } = require("../utils/tokenUtil");
+const { createJWT, verifyJWT } = require("../utils/tokenUtil");
 
 const Member = require("../models/Member");
 const Admin = require("../models/Admin");
@@ -62,5 +62,26 @@ exports.login = async (req, res) => {
     return res
       .status(StatusCodes.OK)
       .json({ message: "Member successfully logged in", isAdmin: false });
+  }
+};
+
+exports.getCurrentPerson = async (req, res) => {
+  const personInfo = req.cookies.devToken;
+
+  const token = req.cookies.devToken;
+
+  if (!token) {
+    const error = new Error("Authentication fails, no token");
+    error.statusCode = StatusCodes.UNAUTHORIZED;
+    throw error;
+  }
+
+  try {
+    const person = verifyJWT(token);
+    const role = person.role;
+
+    res.status(StatusCodes.OK).json({ role, person });
+  } catch (err) {
+    console.log(err);
   }
 };

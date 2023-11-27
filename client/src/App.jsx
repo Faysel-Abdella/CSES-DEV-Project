@@ -29,6 +29,7 @@ import MemberEvents from "./pages/member/MemberEvents";
 import { action as loginAction } from "./pages/LoginPage";
 import { loader as editEventLoader } from "./pages/admin/EditEventPage";
 import { action as editEventAction } from "./pages/admin/EditEventPage";
+import { loader as layoutLoader } from "./components/Layout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
   {
     path: "/admin/dashboard/home",
     element: <DashboardLayout />,
+    loader: layoutLoader,
+
     children: [
       {
         index: true,
