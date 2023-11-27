@@ -1,32 +1,32 @@
-### Member Management System
+#### Member Management System
 Welcome to the Member Management System for CSEC-DEV members! This is a full stack project built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The system allows administrators and members to manage user accounts within the CSEC-DEV community.
 
-Tools Used
+###  Tools Used
 Front-end:
+React.js,
+Vite.js,
+Tailwind CSS,
+Axios,
+React Router DOM,
+React Scroll,
+React Toastify,
 
-React.js
-Vite.js
-Tailwind CSS
-Axios
-React Router DOM
-React Scroll
-React Toastify
 Back-end:
+Node.js,
+Express.js,
+MongoDB (via Mongoose),
+Bcrypt.js,
+Body-parser,
+Cookie-parser,
+CORS,
+Dotenv,
+Express Async Errors,
+Express Validator,
+HTTP Status Codes,
+JSON Web Token (JWT),
+Testing Credentials,
 
-Node.js
-Express.js
-MongoDB (via Mongoose)
-Bcrypt.js
-Body-parser
-Cookie-parser
-CORS
-Dotenv
-Express Async Errors
-Express Validator
-HTTP Status Codes
-JSON Web Token (JWT)
-Testing Credentials
-To test the functionality of the Member Management System, you can use the following credentials:
+###To test the functionality of the Member Management System, you can use the following credentials:
 
 Admin Login:
 
