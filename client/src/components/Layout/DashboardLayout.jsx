@@ -13,7 +13,8 @@ export const loader = async () => {
       return redirect("/");
     }
     return null;
-  } catch {
+  } catch (err) {
+    console.log(err);
     return redirect("/");
   }
 };
