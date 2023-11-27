@@ -19,6 +19,11 @@ import UsersPage from "./pages/admin/UsersPage";
 import EditEventPage from "./pages/admin/EditEventPage";
 import EventsPage from "./pages/admin/EventsPage";
 
+// Member Page
+import MemberLayout from "./components/Layout/MemberLayout";
+import MemberDashboard from "./pages/member/MemberDashboard";
+import MemberSideBar from "./components/Sidebar/MemberSideBar";
+
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
 import { loader as editEventLoader } from "./pages/admin/EditEventPage";
@@ -66,6 +71,20 @@ const router = createBrowserRouter([
         element: <EditEventPage />,
         loader: editEventLoader,
         action: editEventAction,
+      },
+    ],
+  },
+  {
+    path: "/member/dashboard/home",
+    element: <MemberLayout />,
+    children: [
+      {
+        index: true,
+        element: <MemberDashboard />,
+      },
+      {
+        path: "events",
+        element: <EventsPage />,
       },
     ],
   },
