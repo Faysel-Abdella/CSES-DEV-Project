@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="max-container font-poppins px-24 pt-4 max-lg:px-20 max-md:px-0 max-[380px]:px-1 bg-bgjar1"
+      className="max-container font-poppins px-24 pt-4 max-lg:px-20 max-md:px-0 max-[380px]:px-1 bg-blue-950"
     >
       <div className="flex flex-col-reverse md:flex-row gap-2 justify-between max-md:items-center max-md:gap-0 ">
         <div className="pt-16 max-md:text-center">

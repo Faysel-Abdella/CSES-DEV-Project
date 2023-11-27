@@ -6,7 +6,7 @@ import github from "../assets/contactSVGs/github.svg";
 const About = () => {
   return (
     <section
-      className="max-container px-10 max-md:px-3 pt-20 font-poppins bg-bgjar1 bg-no-repeat bg-cover"
+      className="max-container px-10 max-md:px-3 pt-20 font-poppins bg-blue-950 bg-no-repeat bg-cover"
       id="about"
     >
       <div className="w-full max-w-[650px] mx-auto text-center">

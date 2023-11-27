@@ -76,10 +76,6 @@ const router = createBrowserRouter([
         loader: editEventLoader,
         action: editEventAction,
       },
-      // {
-      //   path: "opportunities",
-      //   element: <OppsPage />,
-      // },
     ],
   },
   {
