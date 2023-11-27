@@ -25,30 +25,30 @@ Express Async Errors
 Express Validator
 HTTP Status Codes
 JSON Web Token (JWT)
+
+
 Testing Credentials
+
 To test the functionality of the Member Management System, you can use the following credentials:
-
 Admin Login:
-
 Email: fayselAdmi@gmail.com
 Password: 090909
-Member Login:
 
+Member Login:
 Email: Fayselcode@gmail.com
 Password: 090909
+
 Project Structure
 The project consists of two main folders: client and server. To run the client side, follow these commands:
 
-bash
-Copy
 cd client  
 npm install  
 npm run dev
+
+
 To start the server side, use the following commands:
 
-bash
-Copy
 cd server  
 npm install  
 npm start
-Make sure to run npm install in each respective folder before starting the client and server.
+
