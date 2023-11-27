@@ -10,9 +10,6 @@ import { RiBaseStationLine } from "react-icons/ri";
 import { ImStarFull } from "react-icons/im";
 import { MdOutlineAccessTime } from "react-icons/md";
 import { PiMagnifyingGlassPlusFill } from "react-icons/pi";
-// Location
-import { PiMapPinLineDuotone } from "react-icons/pi";
-// notices
 
 const DashboardHome = () => {
   const [users, setUsers] = useState(0);

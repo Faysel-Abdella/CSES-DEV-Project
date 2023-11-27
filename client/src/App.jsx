@@ -19,6 +19,7 @@ import UsersPage from "./pages/admin/UsersPage";
 
 // Functions
 import { action as loginAction } from "./pages/LoginPage";
+import EventsPage from "./pages/admin/EventsPage";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <UsersPage />,
+      },
+      {
+        path: "events",
+        element: <EventsPage />,
       },
     ],
   },
