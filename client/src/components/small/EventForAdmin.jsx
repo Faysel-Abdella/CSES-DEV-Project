@@ -2,6 +2,7 @@ import React from "react";
 import { FaTag } from "react-icons/fa";
 import { PiMapPinLineDuotone } from "react-icons/pi";
 import { FaRegClock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const EventForAdmin = ({
   title,
@@ -49,6 +50,17 @@ const EventForAdmin = ({
           </span>
           <span> {eventType}</span>
         </p>
+        <div className="flex justify-center gap-2 absolute bottom-2 right-4">
+          <Link className="bg-green-700 py-3 px-3 rounded-2xl hover:bg-green-500 text-white text-[18px]">
+            Edit Event
+          </Link>
+          <button
+            className="bg-red-500 py-3 px-3 rounded-2xl hover:bg-green-500 text-white text-[18px]"
+            onClick={deleteHandler}
+          >
+            Delete Event
+          </button>
+        </div>
       </section>
     </>
   );

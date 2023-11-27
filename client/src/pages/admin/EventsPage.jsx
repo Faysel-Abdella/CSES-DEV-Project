@@ -58,6 +58,7 @@ const EventsPage = () => {
 
       setEvents((prev) => prev.filter((event) => event._id !== id));
       toast.success("Event deleted successfully", { autoClose: 3000 });
+      fetchData();
     } catch (error) {
       console.log(error);
       return error;
